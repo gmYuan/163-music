@@ -9,24 +9,25 @@
 
 
 	<script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
+	<script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
 
 	<script>
-		var APP_ID = 'VmemRogGRD7PUbg1TLkpxlEj-gzGzoHsz';
-		var APP_KEY = 'w4bA6jXoo0pMT6t47LrdqDSI';
+		// var APP_ID = 'VmemRogGRD7PUbg1TLkpxlEj-gzGzoHsz';
+		// var APP_KEY = 'w4bA6jXoo0pMT6t47LrdqDSI';
 
-		AV.init({
-			appId: APP_ID,
-			appKey: APP_KEY
-		});
+		// AV.init({
+		// 	appId: APP_ID,
+		// 	appKey: APP_KEY
+		// });
 
-		var TestObject = AV.Object.extend('Song');
-		var testObject = new TestObject();
-		testObject.save({
-			name: 'test',
-			singer: 'test'
-		}).then(function(object) {
-			alert('LeanCloud Rocks!');
-		})
+		// var TestObject = AV.Object.extend('Song');
+		// var testObject = new TestObject();
+		// testObject.save({
+		// 	name: 'test',
+		// 	singer: 'test'
+		// }).then(function(object) {
+		// 	alert('LeanCloud Rocks!');
+		// })
 		
 
 	</script>
