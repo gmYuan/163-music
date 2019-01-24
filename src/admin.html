@@ -84,7 +84,11 @@
              },
              'FileUploaded': function(up, file, info) {
                // 每个文件上传成功后,处理相关的事情
-               $info.textContent = "上传状态：上传成功!"
+               var domain = up.getOption('domain');
+               var response =JSON.parse(info.response);
+               var sourceLink = domain + '/' + encodeURIComponent(response.key)
+
+               $info.textContent = "上传状态：上传成功!" + `外链为: ${sourceLink}`
               
              },
              'Error': function(up, err, errTip) {
