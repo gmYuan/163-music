@@ -1,0 +1,111 @@
+/* reset部分 */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* ::before { box-sizing: border-box;}
+* ::after { box-sizing: border-box;}
+
+h2{
+  font-weight: normal;
+}
+
+ol,ul {
+  list-style: none;
+}
+
+/* article部分 */
+
+.article {
+  display: flex;
+  height: 100vh;
+ 
+}
+
+/* aside部分 */
+
+.aside {
+  flex-basis: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.aside .asideTitle {
+  padding: 8px;
+  border-bottom: 1px solid #999;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.aside .songList { flex: 1;}
+
+.aside .songList li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+}
+
+.aside .songList li.active {
+  background: #ddd;
+}
+
+.aside .upwrap {
+  width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 20px;
+	border-radius: 3px;
+	border: 2px dashed #ddd;
+}
+
+
+/* main部分 */
+
+.main {
+  flex: 1;
+  height: 100%;
+  background: #ddd;
+}
+
+.main .mainTitle {
+  padding: 28px;
+}
+
+.main .form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main .row {
+  
+  width: 100%;
+  padding: 12px;
+  margin-left: 30px;
+  font-size: 14px;
+}
+
+.main .row input[type="text"] {
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  line-height: 1.4;
+}
+
+.main .form .submit {
+  margin-left: 78px;
+  min-width: 56px;
+  padding: 3px 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  
+}
