@@ -18,7 +18,6 @@
       this.view = view
       this.model = model
       this.view.render(this.model.data)
-      window.APP.songLisy = controller
     }
     
   }

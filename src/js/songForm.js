@@ -32,13 +32,15 @@
       this.view = view
       this.model = model
       this.view.render(this.model.data)
-    },
-    reset(){
-      console.log("我收到了回调咧~")
+
+      window.eventHub.on("upload", (data) => {
+        console.log(data)
+
+      })
     }
 
   }
 
   controller.init(view, model)
-  window.APP.songForm = controller
+ 
 }
