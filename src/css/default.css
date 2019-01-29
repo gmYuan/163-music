@@ -52,6 +52,7 @@ ol,ul {
   font-size: 12px;
 }
 
+.aside .asideTitle.active,
 .aside .songList li.active {
   background: #ddd;
 }

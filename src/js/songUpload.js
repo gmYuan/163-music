@@ -54,8 +54,11 @@
             var sourceLink = domain + '/' + encodeURIComponent(response.key)
   
             $info.textContent = "上传状态：上传成功!"
-            console.log(sourceLink)
-            console.log(response.key)
+            // console.log(sourceLink)
+            // console.log(response.key)
+            window.APP.songTitle.active()
+            window.APP.songForm.reset()
+
   
           },
           'Error': function (up, err, errTip) {
@@ -67,10 +70,11 @@
           }
         }
       })
-      }
+    }
   }
 
   controller.init(view, model)
+  window.APP.songUpload = controller
 
 
 }
