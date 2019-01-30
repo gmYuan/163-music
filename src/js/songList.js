@@ -8,6 +8,10 @@
     `,
     render(data){
       $(this.el).html(this.template)
+    },
+    clearActive(){
+      $(this.)
+
     }
   }
   
@@ -18,6 +22,7 @@
       this.view = view
       this.model = model
       this.view.render(this.model.data)
+      window.eventHub.on("upload", this.view.clearActive)
     }
     
   }
