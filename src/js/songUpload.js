@@ -56,8 +56,8 @@
             $info.textContent = "上传状态：上传成功!"
       
             var transdata = {
-              sourceLink: sourceLink,
-              key: response.key
+              link: sourceLink,
+              name: response.key
             }
             window.eventHub.emit("upload", transdata)
 

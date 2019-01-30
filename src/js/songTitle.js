@@ -16,8 +16,10 @@
       this.view = view
       this.model= model
       this.view.render(this.model.data)
-      this.active()
-      window.eventHub.on("upload", this.active)
+      //this.active()
+      window.eventHub.on("upload", () => {
+        this.active()
+      })
     },
     active(){
       $(this.view.el).addClass('active')

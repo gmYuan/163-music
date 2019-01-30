@@ -6,21 +6,27 @@
     <form class="form">
       <label class="row">
         <span>歌名</span>
-        <input type="text">
+        <input type="text" name="name" value="__name__">
       </label>
       <label class="row">
         <span>歌手</span>
-        <input type="text">
+        <input type="text" name="singer">
       </label>
       <label class="row">
         <span>外链</span>
-        <input type="text">
+        <input type="text" name="link" value="__link__">
       </label>
 
       <input type="submit" value="保存" class="submit">
     </form>
     `,
-    render(data){
+    render(data = {}){
+      for (let string in data) {
+        let content = $("input[name]").replaceWith(`__${string}__`)
+      }
+
+
+
       $(this.el).html(this.template)
     }
   }
@@ -34,7 +40,7 @@
       this.view.render(this.model.data)
 
       window.eventHub.on("upload", (data) => {
-        console.log(data)
+        this.view.render(data)
 
       })
     }

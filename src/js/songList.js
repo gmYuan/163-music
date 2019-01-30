@@ -10,8 +10,7 @@
       $(this.el).html(this.template)
     },
     clearActive(){
-      $(this.)
-
+      $(this.el).find(".active").removeClass('active')
     }
   }
   
@@ -22,7 +21,9 @@
       this.view = view
       this.model = model
       this.view.render(this.model.data)
-      window.eventHub.on("upload", this.view.clearActive)
+      window.eventHub.on("upload", () => {
+        this.view.clearActive()
+      })
     }
     
   }
