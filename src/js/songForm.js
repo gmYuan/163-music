@@ -1,4 +1,4 @@
-{
+ {
   let view = {
     el: '#main',
     template: `
@@ -21,13 +21,13 @@
     </form>
     `,
     render(data = {}){
-      for (let string in data) {
-        let content = $("input[name]").replaceWith(`__${string}__`)
-      }
-
-
-
-      $(this.el).html(this.template)
+      let placehoder = ['name', 'link']
+      let content = this.template
+      placehoder.map((string) => {
+        content = content.replace(`__${string}__`, data[string] || '') 
+      })
+      $(this.el).html(content)
+      
     }
   }
   
