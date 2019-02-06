@@ -1,20 +1,33 @@
 {
   let view = {
     el: '.songList',
-    template: `
-    <li>歌曲1</li>
-    <li class="active">歌曲222222222222</li>
-    <li>歌曲33333</li>
-    `,
+    template: ``,
+
     render(data){
-      $(this.el).html(this.template)
+      let {songs} = data
+      let songlist = songs.map(songinfo => lisong = $("<li></li>").text(`${songinfo.name}`))
+      $(this.el).empty()
+      songlist.map( (liDom)=> {
+        $(this.el).find(".active").removeClass('active')
+        $(liDom).addClass('active')
+        $(this.el).append(liDom)
+
+      })   
     },
+
     clearActive(){
       $(this.el).find(".active").removeClass('active')
     }
   }
   
-  let model= {}
+  let model= {
+    data: {
+      songs: [
+        // {"name": xxx, "singer":xxx, "url": xxx}, 
+        // {""}
+      ]
+    }
+  }
 
   let controller ={
     init(view, model){
@@ -23,6 +36,12 @@
       this.view.render(this.model.data)
       window.eventHub.on("upload", () => {
         this.view.clearActive()
+      })
+
+      window.eventHub.on("create", (songdata) => {
+        this.model.data.songs.push(songdata)
+        this.view.render(this.model.data)
+
       })
     }
     
