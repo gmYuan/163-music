@@ -14,6 +14,12 @@
       })   
     },
 
+    activeItem(target){
+      $(target).addClass('active').siblings().removeClass('active')
+
+
+    },
+
     clearActive(){
       $(this.el).find(".active").removeClass('active')
     }
@@ -42,21 +48,44 @@
     init(view, model){
       this.view = view
       this.model = model
+      this.selected = false    // 是否点击了列表区元素的 状态值标记
 
       // this.view.render(this.model.data)
-      this.model.fetch().then( () => {      // 从数据库中获取数据 + 存入本地model中
-        this.view.render(this.model.data)
-      }) 
+      this.getAllSongs()     // 从数据库中获取歌曲数据 + 存入本地model中
+      this.bindEvents()      // 事件绑定
+      this.bindEventHub()   // 发布订阅事件
+    },
 
+
+    getAllSongs(){          // 从数据库中获取歌曲数据 + 存入本地model中
+      this.model.fetch().then( () => {     
+        this.view.render(this.model.data)
+      })     
+    },
+
+    bindEvents(){
+      $(this.view.el).on('click', 'li', (e) => {
+        this.view.activeItem(e.target)
+
+        this.selected = true   // 传出已点击列表元素 为真
+        window.eventHub.emit("select", this.selected)
+
+      })
+    
+    },
+
+    bindEventHub(){          // 发布订阅事件
+      // upload 歌曲上传事件
       window.eventHub.on("upload", () => {
         this.view.clearActive()
       })
 
+      // create 表单创建歌曲事件
       window.eventHub.on("create", (songdata) => {
         this.model.data.songs.push(songdata)
         this.view.render(this.model.data)
-
       })
+
     }
     
   }

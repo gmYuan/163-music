@@ -1,12 +1,21 @@
 {
-  let view ={
+  let view = {
     el: '.asideTitle',
     template: `
     新建歌曲
     `,
     render(data){
       $(this.el).html(this.template)
+    },
+
+    active(){
+      $(this.el).addClass('active')  
+    },
+
+    deactive(){
+      $(this.el).removeClass('active')  
     }
+
   }
 
   let model = {}
@@ -16,16 +25,20 @@
       this.view = view
       this.model= model
       this.view.render(this.model.data)
-      //this.active()
-      window.eventHub.on("upload", () => {
-        this.active()
-      })
+      this.view.active()
+
+      this.bindEventHub()
+     
     },
-    active(){
-      $(this.view.el).addClass('active')
+
+    bindEventHub(){
+      window.eventHub.on("upload", () => {this.view.active()})
+      window.eventHub.on("select", (selected) => {
+        if (selected){
+          this.view.deactive()
+        }
+      })
     }
-
-
 
   }
 
