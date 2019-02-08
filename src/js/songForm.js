@@ -100,9 +100,12 @@
         this.view.showTitle(data.selected)
       })
 
-      window.eventHub.on('new', () => {    // new 点击标题区事件
-        this.view.render()
+      window.eventHub.on('new', (data) => {    // new 点击标题区事件
+        if (data){  // 为真时则 清空表单内容
+          this.view.render()    
+        }
       })
+
     }
 
   }

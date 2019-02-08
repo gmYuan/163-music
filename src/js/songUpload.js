@@ -57,7 +57,7 @@
       
             var transdata = {
               url: sourceLink,
-              name: response.key
+              name: response.key,
             }
             window.eventHub.emit("upload", transdata)
 
