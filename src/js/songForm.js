@@ -34,8 +34,8 @@
     reset() {
       this.render()
     },
-    showTitle(selected){
-      if (selected){
+    showTitle(selected) {
+      if (selected) {
         $(".mainTitle").text(`编辑歌曲`)
       }
     }
@@ -68,44 +68,83 @@
       this.view.init()       // 简化获取view.el的写法
       this.view.render(this.model.data)
 
+      this.songsaved = false  // 歌曲是否保存标志位， 用于判断是 新建/更新歌曲
+      this.id = ''            // 已存歌曲的id,用于 更新数据时使用
+
       this.bindEvents()
       this.bindEventHub()
+
+    },
+
+    createSong() {     // 新建歌曲
+      let data = {}
+      let formkey = ["name", "singer", "url"]
+      formkey.map(string => {
+        data[string] = this.view.$el.find(`input[name = ${string}]`).val()  //find中可以传入变量
+      })
+
+      this.model.create(data).then(() => {
+        // this.view.render(this.model.nowData)
+        this.view.reset()
+        let modelData = JSON.parse(JSON.stringify(this.model.nowData))
+        window.eventHub.emit("create", modelData)
+      })
+
+    },
+
+    updateSong(songid){      // 更新歌曲
+      song = AV.Object.createWithoutData('Song',songid);
+
+      // 修改属性
+      let data = {}
+      let formkey = ["name", "singer", "url"]
+      formkey.map(string => {
+        data[string] = this.view.$el.find(`input[name = ${string}]`).val()  //find中可以传入变量
+      })
+      for (let key in data) {
+        song.set(`${key}`, `${data[key]}`)
+      }
+      // 保存到云端
+      song.save()
+      // update 更新已存数据字段事件
+      data.id = songid
+      window.eventHub.emit("update", JSON.parse(JSON.stringify(data))) 
 
     },
 
     bindEvents() {
       this.view.$el.on("submit", "form", (e) => {
         e.preventDefault()
-        let data = {}
-        let formkey = ["name", "singer", "url"]
-        formkey.map(string => {
-          data[string] = this.view.$el.find(`input[name = ${string}]`).val()  //find中可以传入变量
-        })
-        this.model.create(data).then(() => {
-          // this.view.render(this.model.nowData)
-          this.view.reset()
-          let modelData = JSON.parse(JSON.stringify(this.model.nowData))
-          window.eventHub.emit("create", modelData)
-        })
+
+        if (this.songsaved) {
+          //console.log("已经保存歌曲")
+          this.updateSong(this.id)
+        } else {
+          //console.log("之前未保存歌曲")
+          this.createSong()
+        }
       })
     },
 
     bindEventHub() {
       window.eventHub.on("upload", (data) => {
         this.view.render(data)
+        this.songsaved = false
       })
 
-      window.eventHub.on("select", (data)=> {     // select 点击列表项事件
+      window.eventHub.on("select", (data) => {     // select 点击列表项事件
         this.view.render(data)
         this.view.showTitle(data.selected)
+        this.songsaved = true
+        this.id = data.id     
       })
 
       window.eventHub.on('new', (data) => {    // new 点击标题区事件
-        if (data){  // 为真时则 清空表单内容
-          this.view.render()    
+        if (data) {  // 为真时则 清空表单内容
+          this.view.render()
+          this.songsaved = false
         }
       })
-
     }
 
   }

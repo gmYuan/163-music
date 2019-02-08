@@ -5,6 +5,7 @@
 
     render(data){
       let {songs} = data
+      
       let songlist = songs.map(songinfo => lisong = $("<li></li>").text(`${songinfo.name}`))
       $(this.el).empty()
       songlist.map( (liDom)=> {
@@ -28,7 +29,7 @@
   let model= {
     data: {
       songs: [
-        // {"name": xxx, "singer":xxx, "url": xxx}, 
+        // {"name": xxx, "singer":xxx, "url": xxx, "id": xxx}, 
         // {""}
       ]
     },
@@ -37,7 +38,7 @@
       let query = new AV.Query('Song')
       return query.find().then( (savedData) => { 
         this.data.songs = savedData.map( (song) => {
-          return {...song.attributes} 
+          return {id: song.id, ...song.attributes} 
         })
       })
     }
@@ -58,7 +59,7 @@
 
 
     getAllSongs(){          // 从数据库中获取歌曲数据 + 存入本地model中
-      this.model.fetch().then( () => {     
+      this.model.fetch().then( () => {   
         this.view.render(this.model.data)
       })     
     },
@@ -95,6 +96,17 @@
       // new 点击标题区事件
       window.eventHub.on('new', () => {
         this.view.clearActive()
+      })
+
+      // update 更新已存数据字段事件
+      window.eventHub.on('update', (data) => {
+        this.model.data.songs.map( (song) => {
+          if (song.id === data.id){
+            Object.assign(song, data)
+          } 
+        })
+        this.view.render(this.model.data)
+
       })
 
     }
