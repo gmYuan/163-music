@@ -33,8 +33,8 @@
 
     bindEventHub(){
       window.eventHub.on("upload", () => {this.view.active()})
-      window.eventHub.on("select", (selected) => {
-        if (selected){
+      window.eventHub.on("select", (data) => {
+        if (data.selected){
           this.view.deactive()
         }
       })

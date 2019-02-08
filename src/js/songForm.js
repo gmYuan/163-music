@@ -31,27 +31,27 @@
     init() {
       this.$el = $(this.el)
     },
-    reset(){
+    reset() {
       this.render()
     }
   }
 
   let model = {
-    nowData: {"name": '', "singer": '', "url": '', "id":''}, 
+    nowData: { "name": '', "singer": '', "url": '', "id": '' },
 
     create(data) {
       let Song = AV.Object.extend('Song')
       let song = new Song()
-      for (let key in data){
+      for (let key in data) {
         song.set(`${key}`, `${data[key]}`)
       }
 
-      return song.save().then( (oneSong) => {
-        let {id, attributes} = oneSong
-        Object.assign(this.nowData, {id, ...attributes})
-        }, (error) => {
+      return song.save().then((oneSong) => {
+        let { id, attributes } = oneSong
+        Object.assign(this.nowData, { id, ...attributes })
+      }, (error) => {
         console.error(error)
-        })
+      })
     }
   }
 
@@ -59,14 +59,12 @@
     init(view, model) {
       this.view = view
       this.model = model
-      this.view.init()
+      this.view.init()       // 简化获取view.el的写法
       this.view.render(this.model.data)
+
       this.bindEvents()
+      this.bindEventHub()
 
-      window.eventHub.on("upload", (data) => {
-        this.view.render(data)
-
-      })
     },
 
     bindEvents() {
@@ -75,15 +73,26 @@
         let data = {}
         let formkey = ["name", "singer", "url"]
         formkey.map(string => {
-           data[string] = this.view.$el.find(`input[name = ${string}]`).val()  //find中可以传入变量
+          data[string] = this.view.$el.find(`input[name = ${string}]`).val()  //find中可以传入变量
         })
-        this.model.create(data).then( () => {
+        this.model.create(data).then(() => {
           // this.view.render(this.model.nowData)
           this.view.reset()
           let modelData = JSON.parse(JSON.stringify(this.model.nowData))
           window.eventHub.emit("create", modelData)
         })
       })
+    },
+
+    bindEventHub() {
+      window.eventHub.on("upload", (data) => {
+        this.view.render(data)
+      })
+
+      window.eventHub.on("select", (data)=> {
+        this.view.render(data)
+      })
+
     }
 
   }

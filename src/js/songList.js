@@ -49,7 +49,7 @@
       this.view = view
       this.model = model
       this.selected = false    // 是否点击了列表区元素的 状态值标记
-
+      
       // this.view.render(this.model.data)
       this.getAllSongs()     // 从数据库中获取歌曲数据 + 存入本地model中
       this.bindEvents()      // 事件绑定
@@ -68,8 +68,14 @@
         this.view.activeItem(e.target)
 
         this.selected = true   // 传出已点击列表元素 为真
-        window.eventHub.emit("select", this.selected)
-
+        let data
+        this.model.data.songs.map( (song) => {
+          if (e.target.textContent === song.name){
+            data = song
+            data.selected = this.selected 
+          }
+        })
+        window.eventHub.emit("select", JSON.parse(JSON.stringify(data)) )
       })
     
     },
