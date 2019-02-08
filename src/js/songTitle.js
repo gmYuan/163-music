@@ -14,7 +14,7 @@
 
     deactive(){
       $(this.el).removeClass('active')  
-    }
+    },
 
   }
 
@@ -27,13 +27,21 @@
       this.view.render(this.model.data)
       this.view.active()
 
+      this.bindEvents()
       this.bindEventHub()
      
     },
 
+    bindEvents(){
+      $(this.view.el).on('click', ()=> {
+        this.view.active()
+        window.eventHub.emit('new')     //new 点击标题区事件
+      })
+    },
+    
     bindEventHub(){
       window.eventHub.on("upload", () => {this.view.active()})
-      window.eventHub.on("select", (data) => {
+      window.eventHub.on("select", (data) => {  // select 点击列表项事件
         if (data.selected){
           this.view.deactive()
         }

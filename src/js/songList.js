@@ -75,7 +75,7 @@
             data.selected = this.selected 
           }
         })
-        window.eventHub.emit("select", JSON.parse(JSON.stringify(data)) )
+        window.eventHub.emit("select", JSON.parse(JSON.stringify(data)) )  //select 点击列表事件
       })
     
     },
@@ -90,6 +90,11 @@
       window.eventHub.on("create", (songdata) => {
         this.model.data.songs.push(songdata)
         this.view.render(this.model.data)
+      })
+
+      // new 点击标题区事件
+      window.eventHub.on('new', () => {
+        this.view.clearActive()
       })
 
     }

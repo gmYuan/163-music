@@ -33,7 +33,13 @@
     },
     reset() {
       this.render()
+    },
+    showTitle(selected){
+      if (selected){
+        $(".mainTitle").text(`编辑歌曲`)
+      }
     }
+
   }
 
   let model = {
@@ -89,10 +95,14 @@
         this.view.render(data)
       })
 
-      window.eventHub.on("select", (data)=> {
+      window.eventHub.on("select", (data)=> {     // select 点击列表项事件
         this.view.render(data)
+        this.view.showTitle(data.selected)
       })
 
+      window.eventHub.on('new', () => {    // new 点击标题区事件
+        this.view.render()
+      })
     }
 
   }
