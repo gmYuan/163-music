@@ -6,7 +6,7 @@
     render(data){
       let {songs} = data
       
-      let songlist = songs.map(songinfo => lisong = $("<li></li>").text(`${songinfo.name}`))
+      let songlist = songs.map(songinfo => lisong = $("<li></li>").text(`${songinfo.name}`).attr('data-id', songinfo.id))
       $(this.el).empty()
       songlist.map( (liDom)=> {
         // $(this.el).find(".active").removeClass('active')
@@ -17,6 +17,8 @@
 
     activeItem(target){
       $(target).addClass('active').siblings().removeClass('active')
+    
+      
 
 
     },
@@ -31,7 +33,8 @@
       songs: [
         // {"name": xxx, "singer":xxx, "url": xxx, "id": xxx}, 
         // {""}
-      ]
+      ],
+      updateli: ''      // 用于记录 更新数据后的列表项，以便高亮
     },
     // 从数据库中获取数据库 字段数据
     fetch(){
@@ -103,9 +106,12 @@
         this.model.data.songs.map( (song) => {
           if (song.id === data.id){
             Object.assign(song, data)
+            this.model.updateli = song.id
+            console.log(this.model.updateli)
           } 
         })
         this.view.render(this.model.data)
+        this.view.activeItem(`li[data-id = ${this.model.updateli}]`)
 
       })
 
