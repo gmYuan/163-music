@@ -22,6 +22,7 @@ ol,ul {
 }
 
 a {
+  color: #333;
   text-decoration: none;
 }
 
@@ -193,7 +194,7 @@ body{
 .remd .remd-songs {
   padding-bottom: 24px;
 }
-.remd-songs .remd-t1 {
+.remd-t1 {
   position: relative;
   padding-left: 9px;
   margin-bottom: 14px;
@@ -202,7 +203,7 @@ body{
   height: 20px;
   line-height: 20px;
 }
-.remd-songs .remd-t1::after{
+.remd-t1::after{
   content: " ";
   position: absolute;
   left: 0;
@@ -236,3 +237,115 @@ body{
   width: 100%;
 }
 
+.songs-li .img-wrap {
+  position: relative;
+}
+
+.songs-li .img-wrap .num {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  z-index: 3;
+
+  padding-left: 13px;
+  color: #fff;
+  font-size: 12px;
+  
+  background: url(../img/audio.svg);
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: 11px 10px;
+  text-shadow: 1px 0 0 rgba(0,0,0,.15);
+}
+
+.songs-li .img-wrap::after{
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: " ";
+  width: 100%;
+  height: 20px;
+  z-index: 2;
+
+  background-image: linear-gradient(180deg,rgba(0,0,0,.2),transparent);
+}
+
+.songs-li .desc {
+  padding: 6px 2px 0 6px;
+  line-height: 1.2;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+
+/* 首页新歌样式 */
+
+.remd .remd-newsongs .newsg-ul {
+  width: 100%;
+}
+.newsg-ul .newsg-li {
+  
+  display: block;
+  width: 100%;
+  min-height: 61px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsg-li .newsg-info {
+  position: relative;
+  flex: 1;
+  padding: 6px 0;
+  width: 0;
+}
+.newsg-info .newsg-title {
+  font-size: 17px;
+  white-space: nowrap;
+  word-break: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.newsg-info .newsg-txt {
+  position: relative;
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+  word-break: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.newsg-info .newsg-txt .sq {
+  margin-right: 4px;
+
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  background: url('../img/index_icon.png') no-repeat;
+  background-size: 166px 97px;
+}
+.newsg-info::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0,0,0,.1);
+  z-index: 2;
+}
+
+.newsg-li .newsg-icon{
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.newsg-icon .playicon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+
+  background: url('../img/index_icon.png') no-repeat;
+  background-position: -24px 0;
+  background-size: 166px 97px;
+}
