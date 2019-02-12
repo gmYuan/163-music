@@ -12,7 +12,8 @@
 * ::before { box-sizing: border-box;}
 * ::after { box-sizing: border-box;}
 
-h1{
+h1,
+h2{
   font-weight: normal;
 }
 
@@ -28,11 +29,16 @@ body{
   font:14px/1.5 Helvetica,sans-serif;
 }
 
+.none {
+  display: none;
+}
+
 /* 页面整体部分 */
 .home {
   min-height: 100%;
   background-color: #fcfcfd;
 }
+
 
 /* header部分 */
 .header {
@@ -42,6 +48,7 @@ body{
   width: 100%;
   min-height: 64px;
   background-color: #d43c33;
+  z-index: 100;
 }
 
 .header .inner-wrap {
@@ -73,30 +80,159 @@ body{
 
 .download .info{
   position: relative;
- 
   display: inline-block;
   height: 30px;
   line-height: 30px;
+  padding: 0 10px;
   font-size: 15px;
   color: #fff;
 }
 
 .download .info::after{
-  content: '';
-  width: 200%;
-  height: 200%;
-  transform: scale(.5);
-  border-color: #fff;
-  border-width: 1px;
-  border-radius: 37.5%/100%;
-
   position: absolute;
   top: 0;
   left: 0;
-  pointer-events: none;
-
+  width: 200%;
+  height: 200%;
+  transform: scale(.5);
   transform-origin: top left;
-  border: 0 solid rgba(0,0,0,.1);
 
-  outline: 1px solid green;
+  content: '';
+  border: 1px solid #fff;
+  border-radius: 37.5%/100%;
+  z-index: 1;
 }
+
+
+
+/* tab切换 标签部分*/
+.mainwrap .toptab {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  min-height: 40px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toptab .tabtitle {
+  display: block;
+  width: 30%;
+  height: 40px;
+  flex: 1;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.toptab .tabtitle .tabinner {
+  position: relative;
+
+  display: inline-block;
+  max-width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  
+  color: #333;
+  font-size: 15px;
+  line-height: 40px;
+}
+
+.toptab .tabtitle .tabinner .tabtxt {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* tab切换标签 底部线 和 激活态*/
+.toptab::after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;  
+  border: 1px solid rgba(0,0,0,.1);
+  z-index: 2;
+}
+
+.toptab .tabtitle.active .tabinner {
+  color: #d33a31;
+}
+
+.toptab .tabtitle.active .tabinner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  
+  width: 100%;
+  height: 4px;
+  transform: scaleY(.5);
+  background: #d33a31;
+  z-index: 3;
+}
+
+
+/* tab内容部分 公有样式*/
+.tabcontent {
+  margin-top: 104px;
+}
+
+/* tab首页 部分样式 */
+.tabcontent .remd {
+  padding-top: 20px;
+}
+.remd .remd-songs {
+  padding-bottom: 24px;
+}
+.remd-songs .remd-t1 {
+  position: relative;
+  padding-left: 9px;
+  margin-bottom: 14px;
+
+  font-size: 17px;
+  height: 20px;
+  line-height: 20px;
+}
+.remd-songs .remd-t1::after{
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -9px;
+  width: 2px;
+  height: 16px;
+  background-color: #d33a31;
+}
+
+.remd-songs .songs-ul {
+  padding-bottom: 16px;
+  width: 100%;
+  display: flex;
+}
+.remd-songs .songs-ul .songs-li {
+  display: block;
+  width: 33.3%;
+}
+.songs-li:nth-child(1) {
+  padding-right: 2px;
+}
+.songs-li:nth-child(2) {
+  padding: 0 1px;
+}
+.songs-li:nth-child(3) {
+  padding-left: 2px;
+}
+.songs-li .img-wrap .pic{
+  display: block;
+  width: 100%;
+}
+
