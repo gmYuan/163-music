@@ -17,10 +17,6 @@
 
     activeItem(target){
       $(target).addClass('active').siblings().removeClass('active')
-    
-      
-
-
     },
 
     clearActive(){
