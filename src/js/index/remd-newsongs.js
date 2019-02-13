@@ -3,8 +3,8 @@
 		el: '#newsg-ul',
 		render(data){
 			let {songs} = data
-			let content = songs.map( (song) => {
-				return `
+			songs.map( (song) => {
+				let $content = `
 				<a href="javascript:;" class="newsg-li">
 				<div class="newsg-info">
 				  <div class="newsg-title">${song.name}</div>
@@ -19,9 +19,8 @@
 				</div>
 				</a>
 				`
+				$(this.el).append($content)
 			})
-			
-			
 		}
 
 	}
