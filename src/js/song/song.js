@@ -1,5 +1,27 @@
 {
-	let view = {}
+	let view = {
+		el: '#song',
+		template: `
+		 <audio src={{song.url}} controls></audio>
+		 <div>
+		   <button id="play">播放</button>
+		   <button id="pause">暂停</button>
+		 </div>
+		`,
+		render(data) {
+			let {songs} = data
+			$(this.el).html(this.template.replace('{{song.url}}', songs.url))
+		},
+		play(){
+			let audio = $(this.el).find('audio')[0]
+			audio.play()
+		},
+		pause(){
+			let audio = $(this.el).find('audio')[0]
+			audio.pause()
+		}
+
+	}
 
 	let model = {
 		data: {
@@ -10,12 +32,10 @@
     },
     getsong(songid) {
     	var query = new AV.Query('Song');
-    	query.get(songid).then( (song) => {
-    		console.log(song)
+    	return query.get(songid).then( (song) => {
     		Object.assign(this.data.songs, {id: song.id, ...song.attributes})
-    		console.log(this.data.songs.id)
     	}, (error) => {
-      	// 异常处理
+      	console.log(error)
     	})
     }
 
@@ -25,10 +45,20 @@
 		init(view, model){
 			this.view = view
 			this.model = model
+			this.bindEvents()
 
 			let songid = this.getsongid()
-			this.model.getsong(songid)
-			
+			this.model.getsong(songid).then( () => {
+				this.view.render(this.model.data)
+			})
+		},
+		bindEvents(){
+			$(this.view.el).on('click', '#play', () => {
+				this.view.play()
+			})
+			$(this.view.el).on('click', '#pause', () => {
+				this.view.pause()
+			})
 		},
 
 		getsongid(){
