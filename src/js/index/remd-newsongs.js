@@ -1,24 +1,28 @@
 {
 	let view = {
 		el: '#newsg-ul',
+		template: `
+		<a href="./song.html?id={{song.id}}" class="newsg-li">
+		<div class="newsg-info">
+		<div class="newsg-title">{{song.name}}</div>
+		<div class="newsg-txt">
+		<i class="sq"></i>
+		<span> {{song.singer}} - {{song.name}}</span>
+		</div>
+		</div>
+
+		<div class="newsg-icon">
+		<i class="playicon"></i>
+		</div>
+		</a>
+		`,
 		render(data){
 			let {songs} = data
 			songs.map( (song) => {
-				let $content = `
-				<a href="javascript:;" class="newsg-li">
-				<div class="newsg-info">
-				  <div class="newsg-title">${song.name}</div>
-				  <div class="newsg-txt">
-				    <i class="sq"></i>
-				    <span> ${song.singer} - ${song.name}</span>
-				  </div>
-				</div>
-
-				<div class="newsg-icon">
-				  <i class="playicon"></i>
-				</div>
-				</a>
-				`
+				let $content = this.template.replace('{{song.name}}', `${song.name}`)
+													.replace('{{song.singer}}', `${song.singer}`)
+													.replace('{{song.name}}', `${song.name}`)
+													.replace('{{song.id}}', `${song.id}`)
 				$(this.el).append($content)
 			})
 		}
