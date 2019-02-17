@@ -53,27 +53,83 @@ body{
   right: 0;
   bottom: 0;
   min-width: 320px;
+  height: 100%;
 }
 
+/* 整体背景图片 */
 .song-inner .song-bg{
   width: 100%;
   height: 100%;
-
   background: url('../img/song_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-
   background-position: 50%;
-   
-  /*  transform: scale(1.5);
-    transform-origin: center top;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    overflow: hidden;
-    z-index: -1;
-    transition: opacity .3s linear;*/
 
+  transform-origin: center top;
+  transform: scale(1.5);
 
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: -1;
+  filter: blur(8px);
+  /* opacity: 1; 
+  transition: opacity .3s linear;  */
+}
+
+.song-inner .song-bg::after{
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.5);
+}
+
+/* 内容—— 光盘区样式 */
+.content-wrap .scroll-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  /* overflow: hidden; */
+  z-index: 21;
+}
+
+/* .holder1 {
+  min-height: 100%;
+} */
+
+.alldisc-wrap {
+  position: relative;
+  height: 607px;
+  padding-bottom: 12px; 
+
+}
+
+.alldisc-wrap .logo {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  height: 17px;
+  line-height: 0;
+}
+
+.logo .logosong{
+  width: 92px;
+  height: 17px;
+
+  display: inline-block;
+  vertical-align: middle;
+  background-position: 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.alldisc-wrap .disc-wrap {
+  padding-top: 70px;
 }
