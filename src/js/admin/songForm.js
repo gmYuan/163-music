@@ -16,12 +16,16 @@
         <span>外链</span>
         <input type="text" name="url" value="__url__">
       </label>
+      <label class="row">
+        <span>封面</span>
+        <input type="text" name="cover" value="__cover__">
+      </label>
 
       <input type="submit" value="保存" class="submit">
     </form>
     `,
     render(data = {}) {
-      let placehoder = ['name', 'singer', 'url']
+      let placehoder = ['name', 'singer', 'url', 'cover']
       let content = this.template
       placehoder.map((string) => {
         content = content.replace(`__${string}__`, data[string] || '')
@@ -43,7 +47,7 @@
   }
 
   let model = {
-    nowData: { "name": '', "singer": '', "url": '', "id": '' },
+    nowData: { "name": '', "singer": '', "url": '', "id": '', "cover": '' },
 
     create(data) {
       let Song = AV.Object.extend('Song')
@@ -78,7 +82,7 @@
 
     createSong() {     // 新建歌曲
       let data = {}
-      let formkey = ["name", "singer", "url"]
+      let formkey = ["name", "singer", "url", "cover"]
       formkey.map(string => {
         data[string] = this.view.$el.find(`input[name = ${string}]`).val()  //find中可以传入变量
       })
@@ -97,7 +101,7 @@
 
       // 修改属性
       let data = {}
-      let formkey = ["name", "singer", "url"]
+      let formkey = ["name", "singer", "url", "cover"]
       formkey.map(string => {
         data[string] = this.view.$el.find(`input[name = ${string}]`).val()  //find中可以传入变量
       })

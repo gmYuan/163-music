@@ -1,24 +1,42 @@
 {
 	let view = {
 		el: '#song',
-		template: ``,
+
 		render(data) {
-			let {songs} = data
+			let {song} = data
+			 $(this.el).find('.song-bg').css('background-image', `url(${song.cover})`)
+			 $(this.el).find('.inner-cover').attr('src', `${song.cover}`)
+			 $(this.el).find('.audio').attr('src', `${song.url}`)
+		},
+		play(){
+			$(this.el).find('.audio')[0].play()
+			$(this.el).find('.disc-play').addClass('none')
+
+			$(this.el).find('.img-innerwrap').css('animation-play-state', 'running')
+			$(this.el).find('.disc-light').css('animation-play-state', 'running')
+
+		},
+		pause(){
+			$(this.el).find('.audio')[0].pause()
+			$(this.el).find('.disc-play').removeClass('none')
+
+			$(this.el).find('.img-innerwrap').css('animation-play-state', 'paused')
+			$(this.el).find('.disc-light').css('animation-play-state', 'paused')
 		}
 	
 	}
 
 	let model = {
 		data: {
-			songs: [
-        // {"name": xxx, "singer":xxx, "url": xxx, "id": xxx}, 
-        // {""}
-      ],
+			song:{
+				// {"name": xxx, "singer":xxx, "url": xxx, "id": xxx, "cover": xxx}
+			},
+			playStatus: false
     },
     getsong(songid) {
     	var query = new AV.Query('Song');
     	return query.get(songid).then( (song) => {
-    		Object.assign(this.data.songs, {id: song.id, ...song.attributes})
+    		Object.assign(this.data.song, {id: song.id, ...song.attributes})
     	}, (error) => {
       	console.log(error)
     	})
@@ -30,14 +48,27 @@
 		init(view, model){
 			this.view = view
 			this.model = model
+			this.bindEvents()
 
 			let songid = this.getsongid()
 			this.model.getsong(songid).then( () => {
-				//this.view.render(this.model.data)
+				this.view.render(this.model.data)
+			})
+		},
+		bindEvents(){
+			$(this.view.el).on('click', '.clickarea', ()=> {
+				if (!this.model.data.playStatus){    //当播放状态为真时
+					this.view.play()
+					this.model.data.playStatus = true
+					console.log("播放中")
+				} else {
+					this.view.pause()
+					this.model.data.playStatus = false
+					console.log("暂停中")
+				}
 			})
 		},
 		
-
 		getsongid(){
 			let search = window.location.search
 			let id = ''
