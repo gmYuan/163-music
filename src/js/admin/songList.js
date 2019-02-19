@@ -103,7 +103,6 @@
           if (song.id === data.id){
             Object.assign(song, data)
             this.model.updateli = song.id
-            console.log(this.model.updateli)
           } 
         })
         this.view.render(this.model.data)

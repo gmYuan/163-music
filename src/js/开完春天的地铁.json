@@ -1,0 +1,947 @@
+{
+  "detail": {
+    "data": {
+      "track_info": {
+        "id": 201626481,
+        "type": 0,
+        "mid": "000twr5T3S93LQ",
+        "name": "开往春天的地铁",
+        "title": "开往春天的地铁 (Live)",
+        "subtitle": "原唱：羽泉|袁娅维突围成功",
+        "singer": [
+          {
+            "id": 36691,
+            "mid": "00472DR10Ytv83",
+            "name": "袁娅维",
+            "title": "袁娅维",
+            "type": 1,
+            "uin": 0
+          }
+        ],
+        "album": {
+          "id": 1977408,
+          "mid": "000DylJv3XVEyF",
+          "name": "歌手 第11期",
+          "title": "歌手 第11期",
+          "subtitle": "原唱：羽泉|袁娅维突围成功",
+          "time_public": "2017-04-01"
+        },
+        "mv": {
+          "id": 0,
+          "vid": "",
+          "name": "",
+          "title": ""
+        },
+        "interval": 271,
+        "isonly": 0,
+        "language": 0,
+        "genre": 1,
+        "index_cd": 0,
+        "index_album": 4,
+        "time_public": "2017-04-01",
+        "status": 0,
+        "fnote": 4009,
+        "file": {
+          "media_mid": "000twr5T3S93LQ",
+          "size_24aac": 845277,
+          "size_48aac": 1661500,
+          "size_96aac": 3320002,
+          "size_192ogg": 6082332,
+          "size_192aac": 6580100,
+          "size_128mp3": 4346187,
+          "size_320mp3": 10865097,
+          "size_ape": 30219468,
+          "size_flac": 30441900,
+          "size_dts": 0,
+          "size_try": 0,
+          "try_begin": 0,
+          "try_end": 0,
+          "url": "",
+          "size_hires": 0,
+          "hires_sample": 0,
+          "hires_bitdepth": 0,
+          "b_30s": 0,
+          "e_30s": 0
+        },
+        "pay": {
+          "pay_month": 1,
+          "price_track": 200,
+          "price_album": 0,
+          "pay_play": 0,
+          "pay_down": 1,
+          "pay_status": 0,
+          "time_free": 0
+        },
+        "action": {
+          "switch": 17413891,
+          "msgid": 14,
+          "alert": 21,
+          "icons": 147324,
+          "msgshare": 0,
+          "msgfav": 0,
+          "msgdown": 0,
+          "msgpay": 6
+        },
+        "ksong": {
+          "id": 2744285,
+          "mid": "003QfQXb0lUAJL"
+        },
+        "volume": {
+          "gain": -7.75,
+          "peak": 1,
+          "lra": 14.688
+        },
+        "label": "0",
+        "url": "http://stream8.qqmusic.qq.com/213626481.wma",
+        "bpm": 72,
+        "version": 3,
+        "trace": "",
+        "data_type": 0,
+        "modify_stamp": 0,
+        "pingpong": ""
+      },
+      "info": [
+        {
+          "title": "演唱者",
+          "type": "JUMP_TO_SINGER",
+          "content": [
+            {
+              "id": 36691,
+              "value": "袁娅维",
+              "mid": "00472DR10Ytv83",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 0,
+          "more": 0,
+          "selected": "singer",
+          "use_platform": 2
+        },
+        {
+          "title": "作词",
+          "type": "lyricist",
+          "content": [
+            {
+              "id": 0,
+              "value": "吴向飞 / Seal",
+              "mid": "",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 8,
+          "more": 0,
+          "selected": "",
+          "use_platform": 0
+        },
+        {
+          "title": "作曲",
+          "type": "composer",
+          "content": [
+            {
+              "id": 0,
+              "value": "张亚东 / Seal",
+              "mid": "0032fmHO2UDnV3",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 8,
+          "more": 0,
+          "selected": "",
+          "use_platform": 0
+        },
+        {
+          "title": "编曲",
+          "type": "arrangement",
+          "content": [
+            {
+              "id": 0,
+              "value": "甯子达 / 温奕哲",
+              "mid": "",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 9,
+          "more": 0,
+          "selected": "",
+          "use_platform": 0
+        },
+        {
+          "title": "制作人",
+          "type": "producer",
+          "content": [
+            {
+              "id": 0,
+              "value": "赵兆",
+              "mid": "",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 10,
+          "more": 0,
+          "selected": "",
+          "use_platform": 0
+        },
+        {
+          "title": "歌曲语种",
+          "type": "JUMP_TO_CATEGORY",
+          "content": [
+            {
+              "id": 1,
+              "value": "国语",
+              "mid": "",
+              "type": 0,
+              "show_type": 2,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 11,
+          "more": 0,
+          "selected": "lan",
+          "use_platform": 3
+        },
+        {
+          "title": "歌曲流派",
+          "type": "JUMP_TO_CATEGORY",
+          "content": [
+            {
+              "id": 40,
+              "value": "Pop",
+              "mid": "",
+              "type": 0,
+              "show_type": 2,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 12,
+          "more": 0,
+          "selected": "genre",
+          "use_platform": 3
+        },
+        {
+          "title": "二胡",
+          "type": "desc",
+          "content": [
+            {
+              "id": 0,
+              "value": "王 颖",
+              "mid": "",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 18,
+          "more": 0,
+          "selected": "",
+          "use_platform": 0
+        },
+        {
+          "title": "键盘",
+          "type": "desc",
+          "content": [
+            {
+              "id": 0,
+              "value": "Jay Dub",
+              "mid": "",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 28,
+          "more": 0,
+          "selected": "",
+          "use_platform": 0
+        },
+        {
+          "title": "贝斯",
+          "type": "desc",
+          "content": [
+            {
+              "id": 0,
+              "value": "甯子达",
+              "mid": "",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 31,
+          "more": 0,
+          "selected": "",
+          "use_platform": 0
+        },
+        {
+          "title": "唱片公司",
+          "type": "JUMP_TO_COMPANY",
+          "content": [
+            {
+              "id": 10664,
+              "value": "快乐阳光",
+              "mid": "",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 51,
+          "more": 0,
+          "selected": "company",
+          "use_platform": 1
+        },
+        {
+          "title": "延展阅读",
+          "type": "MP_ARTICLE",
+          "content": [],
+          "pos": 99,
+          "more": 0,
+          "selected": "",
+          "use_platform": 0
+        },
+        {
+          "title": "歌词",
+          "type": "lyric",
+          "content": [
+            {
+              "id": 0,
+              "value": "[ti:开往春天的地铁]\n[ar: ]\n[al:]\n[by:]\n[offset:0]\n[00:00.10]开往春天的地铁 (Live) (原唱：羽泉|袁娅维突围成功) - 袁娅维 (Tia Ray)\n[00:00.20]\n[00:01.13]词：吴向飞/Seal\n[00:01.33]曲：张亚东/Seal\n[00:01.53]编曲：甯子达/温奕哲\n[00:01.86]Program：甯子达/温奕哲\n[00:02.16]制作人：赵兆\n[00:02.35]贝斯：甯子达\n[00:02.55]二胡：王 颖\n[00:02.72]鼓手：Tony Parker\n[00:02.88]键盘：Jay Dub\n[00:03.28]\n[00:22.81]这个\n[00:23.56]\n[00:24.13]冬天\n[00:25.23]\n[00:27.78]最后\n[00:28.92]一夜\n[00:30.10]\n[00:32.47]我和你\n[00:33.49]\n[00:34.10]都在寻找\n[00:35.98]\n[00:36.86]开往\n[00:37.52]春天的地铁\n[00:40.38]\n[00:42.59]这里\n[00:43.78]不是\n[00:44.75]\n[00:47.53]我的\n[00:48.33]世界\n[00:50.08]\n[00:52.01]我等了\n[00:53.02]\n[00:53.54]一天一夜\n[00:55.62]\n[00:56.34]等开往\n[00:57.31]春天的地铁\n[01:00.25]\n[01:01.62]我不怕\n[01:04.50]\n[01:05.14]用任何代价\n[01:08.30]\n[01:10.56]只是\n[01:11.38]我害怕\n[01:14.43]\n[01:15.03]自己对付不了\n[01:18.61]牵挂\n[01:22.31]\n[01:23.22]我已经等你\n[01:24.30]找你追你\n[01:25.17]用尽\n[01:25.58]所有方法\n[01:27.60]\n[01:28.39]找啊\n[01:29.74]找啊 找啊\n[01:32.23]\n[01:33.43]不过是\n[01:34.22]爱了恨了\n[01:34.93]分了合了\n[01:35.66]变化\n[01:38.37]一时\n[01:39.25]冲动的想法\n[01:43.37]\n[02:04.16]擦肩\n[02:05.08]而过\n[02:06.58]\n[02:08.84]目光\n[02:09.80]交错\n[02:11.61]\n[02:13.44]我依然\n[02:14.35]\n[02:14.91]还在追赶\n[02:17.10]\n[02:17.69]开往\n[02:18.60]春天的地铁\n[02:21.92]\n[02:22.82]我不怕\n[02:25.89]\n[02:26.44]受任何惩罚\n[02:30.16]\n[02:32.89]我\n[02:33.76]只怕\n[02:36.30]有天\n[02:36.97]你不和我说话\n[02:44.20]\n[02:45.12]Baby\n[02:45.96]\n[02:46.48]I compare you to a kiss from a rose on the grey\n[02:51.90]The more I get of you stranger it feels yeah\n[02:55.52]\n[02:56.57]And now that your rose is in bloom\n[02:59.57]\n[03:00.36]A light hits the gloom on the grey\n[03:03.22]\n[03:04.63]I compare you to a kiss from a rose on the grey\n[03:08.72]\n[03:09.47]The more I get of you stranger it feels yeah\n[03:14.68]And now that your rose is in bloom\n[03:17.54]\n[03:18.30]A light hits the gloom on the grey\n[03:21.62]\n[03:23.25]我已经等你\n[03:24.20]找你追你\n[03:25.01]用尽\n[03:25.45]所有方法\n[03:27.80]\n[03:28.43]找啊\n[03:29.70]找啊 找啊\n[03:31.99]\n[03:33.46]不过是\n[03:34.33]爱了恨了\n[03:35.00]分了合了\n[03:35.79]变化\n[03:38.27]\n[03:38.86]一时\n[03:39.73]冲动的想法\n[03:41.57]\n[03:43.93]我被风吹得\n[03:45.84]\n[03:46.41]张不开嘴巴\n[03:48.33]\n[03:48.90]跑啊\n[03:49.58]跑啊 跑啊\n[03:52.81]\n[03:53.65]一颗心\n[03:54.48]哭了醒了\n[03:55.77]丢了撕了\n[03:56.64]\n[03:57.53]痛吗\n[04:02.63]\n[04:11.13]别\n[04:11.86]\n[04:12.72]躲我了\n[04:14.90]\n[04:18.56]好吗",
+              "mid": "",
+              "type": 0,
+              "show_type": 0,
+              "is_parent": 0,
+              "picurl": "",
+              "read_cnt": 0,
+              "author": "",
+              "jumpurl": "",
+              "ori_picurl": ""
+            }
+          ],
+          "pos": 100,
+          "more": 0,
+          "selected": "",
+          "use_platform": 0
+        }
+      ],
+      "extras": {
+        "name": "开往春天的地铁 (Live)",
+        "transname": "",
+        "subtitle": "原唱：羽泉|袁娅维突围成功",
+        "from": ""
+      }
+    },
+    "code": 0
+  },
+  "gedan": {
+    "data": {
+      "vec_gedan": [
+        {
+          "tid": 6176989428,
+          "listen_num": 5793296,
+          "imgurl": "http://p.qpic.cn/music_cover/JBDCVgqXWXaYUvcsElqcicTdUxmWQ6tPZHt9xibWxcpVUGYvjb7nMuTw/600",
+          "dissname": "《歌手》最全歌曲大合集",
+          "creator": "Q音综艺侠",
+          "song_num": 587
+        },
+        {
+          "tid": 4243941097,
+          "listen_num": 215591,
+          "imgurl": "http://p.qpic.cn/music_cover/jz0folMlic1HvslOBmPvuyE8XjpkaEWK3FdaODYEJwt5YToUPNzje2w/600",
+          "dissname": "惊艳全场的华语女高音Live",
+          "creator": "G-ÐЯÃɡǒИ",
+          "song_num": 38
+        },
+        {
+          "tid": 2372552655,
+          "listen_num": 858172,
+          "imgurl": "http://p.qpic.cn/music_cover/Epqq26mXexIV5ibAPicN4vMuvuAevqDEFviblXcMDibJSHbmrnibbvcxkiaQ/300",
+          "dissname": "诗与远方音乐节：关于诗歌与音乐的对话",
+          "creator": "到底是谁，在背后说我帅",
+          "song_num": 44
+        }
+      ],
+      "has_more": 1
+    },
+    "code": 0
+  },
+  "simsongs": {
+    "data": {
+      "is_finish": 1,
+      "rec_reason": "999_201626481",
+      "songInfoList": [
+        {
+          "action": {
+            "alert": 21,
+            "icons": 147324,
+            "msgdown": 0,
+            "msgfav": 0,
+            "msgid": 14,
+            "msgpay": 6,
+            "msgshare": 0,
+            "switch": 17413891
+          },
+          "album": {
+            "id": 1941443,
+            "mid": "003CNvSO1Vx2iY",
+            "name": "歌手 第10期",
+            "subtitle": "",
+            "time_public": "2017-03-25",
+            "title": "歌手 第10期"
+          },
+          "bpm": 72,
+          "data_type": 0,
+          "file": {
+            "b_30s": 0,
+            "e_30s": 0,
+            "hires_bitdepth": 0,
+            "hires_sample": 0,
+            "media_mid": "003Gqgy22qoF7T",
+            "size_128mp3": 4991884,
+            "size_192aac": 7554489,
+            "size_192ogg": 6818652,
+            "size_24aac": 969650,
+            "size_320mp3": 12479414,
+            "size_48aac": 1904472,
+            "size_96aac": 3804093,
+            "size_ape": 30374999,
+            "size_dts": 0,
+            "size_flac": 30567748,
+            "size_hires": 0,
+            "size_try": 0,
+            "try_begin": 0,
+            "try_end": 0,
+            "url": ""
+          },
+          "fnote": 4009,
+          "genre": 1,
+          "id": 201428089,
+          "index_album": 2,
+          "index_cd": 0,
+          "interval": 311,
+          "isonly": 0,
+          "ksong": {
+            "id": 2734796,
+            "mid": "0030BNLH2fmFFJ"
+          },
+          "label": "0",
+          "language": 0,
+          "mid": "003Gqgy22qoF7T",
+          "modify_stamp": 0,
+          "mv": {
+            "id": 0,
+            "name": "",
+            "title": "",
+            "vid": ""
+          },
+          "name": "男孩",
+          "pay": {
+            "pay_down": 1,
+            "pay_month": 1,
+            "pay_play": 0,
+            "pay_status": 0,
+            "price_album": 0,
+            "price_track": 200,
+            "time_free": 0
+          },
+          "singer": [
+            {
+              "id": 68632,
+              "mid": "003CNC9D00CaVx",
+              "name": "梁博",
+              "title": "梁博",
+              "type": 0,
+              "uin": 0
+            }
+          ],
+          "status": 0,
+          "subtitle": "",
+          "time_public": "2017-03-25",
+          "title": "男孩 (Live)",
+          "trace": "",
+          "type": 0,
+          "url": "http://stream3.qqmusic.qq.com/213428089.wma",
+          "version": 3,
+          "volume": {
+            "gain": -4.464,
+            "lra": 12.615,
+            "peak": 1
+          }
+        },
+        {
+          "action": {
+            "alert": 21,
+            "icons": 147324,
+            "msgdown": 0,
+            "msgfav": 0,
+            "msgid": 14,
+            "msgpay": 6,
+            "msgshare": 0,
+            "switch": 17413891
+          },
+          "album": {
+            "id": 1308472,
+            "mid": "0014PIct2LKiPl",
+            "name": "阿楚姑娘",
+            "subtitle": "",
+            "time_public": "2016-03-28",
+            "title": "阿楚姑娘"
+          },
+          "bpm": 91,
+          "data_type": 0,
+          "file": {
+            "b_30s": 0,
+            "e_30s": 0,
+            "hires_bitdepth": 0,
+            "hires_sample": 0,
+            "media_mid": "001zw5Ld0QFDhw",
+            "size_128mp3": 3982513,
+            "size_192aac": 5617525,
+            "size_192ogg": 5181764,
+            "size_24aac": 785428,
+            "size_320mp3": 9955985,
+            "size_48aac": 1537412,
+            "size_96aac": 2974720,
+            "size_ape": 23589735,
+            "size_dts": 0,
+            "size_flac": 23705061,
+            "size_hires": 0,
+            "size_try": 0,
+            "try_begin": 74303,
+            "try_end": 115533,
+            "url": ""
+          },
+          "fnote": 4009,
+          "genre": 1,
+          "id": 105769829,
+          "index_album": 1,
+          "index_cd": 0,
+          "interval": 248,
+          "isonly": 1,
+          "ksong": {
+            "id": 240409,
+            "mid": "000bp5CS2R7Vw0"
+          },
+          "label": "4611686153723052033",
+          "language": 0,
+          "mid": "001zw5Ld0QFDhw",
+          "modify_stamp": 0,
+          "mv": {
+            "id": 0,
+            "name": "",
+            "title": "",
+            "vid": ""
+          },
+          "name": "阿楚姑娘",
+          "pay": {
+            "pay_down": 1,
+            "pay_month": 1,
+            "pay_play": 0,
+            "pay_status": 0,
+            "price_album": 0,
+            "price_track": 200,
+            "time_free": 0
+          },
+          "singer": [
+            {
+              "id": 36691,
+              "mid": "00472DR10Ytv83",
+              "name": "袁娅维",
+              "title": "袁娅维",
+              "type": 1,
+              "uin": 0
+            }
+          ],
+          "status": 0,
+          "subtitle": "",
+          "time_public": "2016-03-28",
+          "title": "阿楚姑娘",
+          "trace": "",
+          "type": 0,
+          "url": "http://stream2.qqmusic.qq.com/117769829.wma",
+          "version": 0,
+          "volume": {
+            "gain": -7.785,
+            "lra": 15.869,
+            "peak": 1
+          }
+        },
+        {
+          "action": {
+            "alert": 21,
+            "icons": 147324,
+            "msgdown": 0,
+            "msgfav": 0,
+            "msgid": 14,
+            "msgpay": 6,
+            "msgshare": 0,
+            "switch": 17413891
+          },
+          "album": {
+            "id": 2017441,
+            "mid": "004O2sJE2793Wl",
+            "name": "歌手 2017巅峰会",
+            "subtitle": "原唱：李宗盛",
+            "time_public": "2017-04-22",
+            "title": "歌手 2017巅峰会"
+          },
+          "bpm": 69,
+          "data_type": 0,
+          "file": {
+            "b_30s": 0,
+            "e_30s": 0,
+            "hires_bitdepth": 0,
+            "hires_sample": 0,
+            "media_mid": "001WdNZ32NAU4B",
+            "size_128mp3": 4562228,
+            "size_192aac": 6896833,
+            "size_192ogg": 5975182,
+            "size_24aac": 884139,
+            "size_320mp3": 11405238,
+            "size_48aac": 1739414,
+            "size_96aac": 3474770,
+            "size_ape": 30820316,
+            "size_dts": 0,
+            "size_flac": 31033280,
+            "size_hires": 0,
+            "size_try": 0,
+            "try_begin": 86921,
+            "try_end": 137051,
+            "url": ""
+          },
+          "fnote": 4009,
+          "genre": 1,
+          "id": 201950947,
+          "index_album": 7,
+          "index_cd": 0,
+          "interval": 285,
+          "isonly": 0,
+          "ksong": {
+            "id": 2766976,
+            "mid": "003KohNN0xsOsz"
+          },
+          "label": "0",
+          "language": 0,
+          "mid": "003lkD0i25walS",
+          "modify_stamp": 0,
+          "mv": {
+            "id": 0,
+            "name": "",
+            "title": "",
+            "vid": ""
+          },
+          "name": "山丘",
+          "pay": {
+            "pay_down": 1,
+            "pay_month": 1,
+            "pay_play": 0,
+            "pay_status": 0,
+            "price_album": 0,
+            "price_track": 200,
+            "time_free": 0
+          },
+          "singer": [
+            {
+              "id": 4419,
+              "mid": "003WlPvN2EvRaj",
+              "name": "韩红",
+              "title": "韩红",
+              "type": 1,
+              "uin": 0
+            }
+          ],
+          "status": 0,
+          "subtitle": "原唱：李宗盛",
+          "time_public": "2017-04-22",
+          "title": "山丘 (Live)",
+          "trace": "",
+          "type": 0,
+          "url": "http://stream1.qqmusic.qq.com/213950947.wma",
+          "version": 3,
+          "volume": {
+            "gain": -6.665,
+            "lra": 11.579,
+            "peak": 1
+          }
+        },
+        {
+          "action": {
+            "alert": 21,
+            "icons": 147324,
+            "msgdown": 0,
+            "msgfav": 0,
+            "msgid": 14,
+            "msgpay": 6,
+            "msgshare": 0,
+            "switch": 17413891
+          },
+          "album": {
+            "id": 1977408,
+            "mid": "000DylJv3XVEyF",
+            "name": "歌手 第11期",
+            "subtitle": "李健突围成功",
+            "time_public": "2017-04-01",
+            "title": "歌手 第11期"
+          },
+          "bpm": 64,
+          "data_type": 0,
+          "file": {
+            "b_30s": 0,
+            "e_30s": 0,
+            "hires_bitdepth": 0,
+            "hires_sample": 0,
+            "media_mid": "002t3tfn3y2eCp",
+            "size_128mp3": 5005697,
+            "size_192aac": 7572276,
+            "size_192ogg": 6450515,
+            "size_24aac": 971297,
+            "size_320mp3": 12513059,
+            "size_48aac": 1912639,
+            "size_96aac": 3815289,
+            "size_ape": 28042849,
+            "size_dts": 0,
+            "size_flac": 28207354,
+            "size_hires": 0,
+            "size_try": 0,
+            "try_begin": 0,
+            "try_end": 0,
+            "url": ""
+          },
+          "fnote": 4009,
+          "genre": 1,
+          "id": 201626485,
+          "index_album": 8,
+          "index_cd": 0,
+          "interval": 312,
+          "isonly": 0,
+          "ksong": {
+            "id": 2744281,
+            "mid": "003yS1Hc36THX7"
+          },
+          "label": "0",
+          "language": 0,
+          "mid": "002t3tfn3y2eCp",
+          "modify_stamp": 0,
+          "mv": {
+            "id": 0,
+            "name": "",
+            "title": "",
+            "vid": ""
+          },
+          "name": "Love Is Over",
+          "pay": {
+            "pay_down": 1,
+            "pay_month": 1,
+            "pay_play": 0,
+            "pay_status": 0,
+            "price_album": 0,
+            "price_track": 200,
+            "time_free": 0
+          },
+          "singer": [
+            {
+              "id": 6740,
+              "mid": "001oEyQf4Ub6s7",
+              "name": "李健",
+              "title": "李健",
+              "type": 0,
+              "uin": 0
+            }
+          ],
+          "status": 0,
+          "subtitle": "李健突围成功",
+          "time_public": "2017-04-01",
+          "title": "Love Is Over (Live)",
+          "trace": "",
+          "type": 0,
+          "url": "http://stream8.qqmusic.qq.com/213626485.wma",
+          "version": 3,
+          "volume": {
+            "gain": -4.06,
+            "lra": 16.718,
+            "peak": 0.957
+          }
+        },
+        {
+          "action": {
+            "alert": 21,
+            "icons": 147324,
+            "msgdown": 0,
+            "msgfav": 0,
+            "msgid": 14,
+            "msgpay": 6,
+            "msgshare": 0,
+            "switch": 17413891
+          },
+          "album": {
+            "id": 1984581,
+            "mid": "003SAYGR1LwMLd",
+            "name": "歌手 第12期",
+            "subtitle": "原唱：莫文蔚|张碧晨晋级成功",
+            "time_public": "2017-04-08",
+            "title": "歌手 第12期"
+          },
+          "bpm": 72,
+          "data_type": 0,
+          "file": {
+            "b_30s": 0,
+            "e_30s": 0,
+            "hires_bitdepth": 0,
+            "hires_sample": 0,
+            "media_mid": "001kkihJ1SW4yD",
+            "size_128mp3": 5442870,
+            "size_192aac": 8233479,
+            "size_192ogg": 7256657,
+            "size_24aac": 1055777,
+            "size_320mp3": 13606427,
+            "size_48aac": 2079753,
+            "size_96aac": 4150489,
+            "size_ape": 33265083,
+            "size_dts": 0,
+            "size_flac": 33424279,
+            "size_hires": 0,
+            "size_try": 0,
+            "try_begin": 0,
+            "try_end": 0,
+            "url": ""
+          },
+          "fnote": 4009,
+          "genre": 1,
+          "id": 201675905,
+          "index_album": 5,
+          "index_cd": 0,
+          "interval": 340,
+          "isonly": 0,
+          "ksong": {
+            "id": 2750068,
+            "mid": "004QDDQ03urhT7"
+          },
+          "label": "0",
+          "language": 0,
+          "mid": "001kkihJ1SW4yD",
+          "modify_stamp": 0,
+          "mv": {
+            "id": 0,
+            "name": "",
+            "title": "",
+            "vid": ""
+          },
+          "name": "不散，不见",
+          "pay": {
+            "pay_down": 1,
+            "pay_month": 1,
+            "pay_play": 0,
+            "pay_status": 0,
+            "price_album": 0,
+            "price_track": 200,
+            "time_free": 0
+          },
+          "singer": [
+            {
+              "id": 199515,
+              "mid": "0003ZpE43ypssl",
+              "name": "张碧晨",
+              "title": "张碧晨",
+              "type": 1,
+              "uin": 0
+            }
+          ],
+          "status": 0,
+          "subtitle": "原唱：莫文蔚|张碧晨晋级成功",
+          "time_public": "2017-04-08",
+          "title": "不散，不见 (Live)",
+          "trace": "",
+          "type": 0,
+          "url": "http://stream1.qqmusic.qq.com/213675905.wma",
+          "version": 3,
+          "volume": {
+            "gain": -7.338,
+            "lra": 19.601,
+            "peak": 1
+          }
+        }
+      ],
+      "title": "相关单曲",
+      "vecRecType": [
+        6001,
+        1003,
+        1002,
+        1002,
+        1002
+      ]
+    },
+    "code": 0
+  },
+  "video": {
+    "data": {
+      "hasmore": 0,
+      "list": []
+    },
+    "code": 0
+  },
+  "code": 0,
+  "ts": 1550591557976
+}

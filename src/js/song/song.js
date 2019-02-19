@@ -4,9 +4,12 @@
 
 		render(data) {
 			let {song} = data
+			console.log(song)
 			 $(this.el).find('.song-bg').css('background-image', `url(${song.cover})`)
 			 $(this.el).find('.inner-cover').attr('src', `${song.cover}`)
 			 $(this.el).find('.audio').attr('src', `${song.url}`)
+			 $(this.el).find('.song-name').text(`${song.name}`)
+			 $(this.el).find('.song-autr').text(`${song.singer}`)
 		},
 		play(){
 			$(this.el).find('.audio')[0].play()
@@ -29,7 +32,7 @@
 	let model = {
 		data: {
 			song:{
-				// {"name": xxx, "singer":xxx, "url": xxx, "id": xxx, "cover": xxx}
+				// {"name": xxx, "singer":xxx, "url": xxx, "id": xxx, "cover": xxx, "lyrics":xxx}
 			},
 			playStatus: false
     },
@@ -59,14 +62,19 @@
 			$(this.view.el).on('click', '.clickarea', ()=> {
 				if (!this.model.data.playStatus){    //当播放状态为真时
 					this.view.play()
-					this.model.data.playStatus = true
-					console.log("播放中")
+					this.model.data.playStatus = true	
 				} else {
 					this.view.pause()
 					this.model.data.playStatus = false
-					console.log("暂停中")
 				}
 			})
+
+			$(this.view.el).find('.audio').on('ended', () => {
+				this.view.pause()
+				this.model.data.playStatus = false
+			})
+
+
 		},
 		
 		getsongid(){

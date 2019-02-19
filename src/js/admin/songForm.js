@@ -20,12 +20,16 @@
         <span>封面</span>
         <input type="text" name="cover" value="__cover__">
       </label>
+      <label class="row">
+        <div>歌词</div>
+        <textarea name="lyrics" rows="10" cols="60">__lyrics__</textarea>
+      </label>
 
       <input type="submit" value="保存" class="submit">
     </form>
     `,
     render(data = {}) {
-      let placehoder = ['name', 'singer', 'url', 'cover']
+      let placehoder = ['name', 'singer', 'url', 'cover', 'lyrics']
       let content = this.template
       placehoder.map((string) => {
         content = content.replace(`__${string}__`, data[string] || '')
@@ -47,7 +51,7 @@
   }
 
   let model = {
-    nowData: { "name": '', "singer": '', "url": '', "id": '', "cover": '' },
+    nowData: { "name": '', "singer": '', "url": '', "id": '', "cover": '', "lyrics": ''},
 
     create(data) {
       let Song = AV.Object.extend('Song')
@@ -82,9 +86,9 @@
 
     createSong() {     // 新建歌曲
       let data = {}
-      let formkey = ["name", "singer", "url", "cover"]
+      let formkey = ["name", "singer", "url", "cover", "lyrics"]
       formkey.map(string => {
-        data[string] = this.view.$el.find(`input[name = ${string}]`).val()  //find中可以传入变量
+        data[string] = this.view.$el.find(`[name = ${string}]`).val()  //find中可以传入变量
       })
 
       this.model.create(data).then(() => {
@@ -101,13 +105,16 @@
 
       // 修改属性
       let data = {}
-      let formkey = ["name", "singer", "url", "cover"]
+      let formkey = ["name", "singer", "url", "cover", "lyrics"]
       formkey.map(string => {
-        data[string] = this.view.$el.find(`input[name = ${string}]`).val()  //find中可以传入变量
+        data[string] = this.view.$el.find(`[name = ${string}]`).val()  //find中可以传入变量
       })
       for (let key in data) {
         song.set(`${key}`, `${data[key]}`)
       }
+      
+
+
       // 保存到云端
       song.save()
       // update 更新已存数据字段事件
