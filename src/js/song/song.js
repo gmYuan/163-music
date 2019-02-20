@@ -4,12 +4,12 @@
 
 		render(data) {
 			let {song} = data
-			console.log(song)
-			 $(this.el).find('.song-bg').css('background-image', `url(${song.cover})`)
-			 $(this.el).find('.inner-cover').attr('src', `${song.cover}`)
-			 $(this.el).find('.audio').attr('src', `${song.url}`)
-			 $(this.el).find('.song-name').text(`${song.name}`)
-			 $(this.el).find('.song-autr').text(`${song.singer}`)
+
+			$(this.el).find('.song-bg').css('background-image', `url(${song.cover})`)
+			$(this.el).find('.inner-cover').attr('src', `${song.cover}`)
+			$(this.el).find('.audio').attr('src', `${song.url}`)
+
+			this.showlyrics(song)
 		},
 		play(){
 			$(this.el).find('.audio')[0].play()
@@ -17,7 +17,6 @@
 
 			$(this.el).find('.img-innerwrap').css('animation-play-state', 'running')
 			$(this.el).find('.disc-light').css('animation-play-state', 'running')
-
 		},
 		pause(){
 			$(this.el).find('.audio')[0].pause()
@@ -25,7 +24,27 @@
 
 			$(this.el).find('.img-innerwrap').css('animation-play-state', 'paused')
 			$(this.el).find('.disc-light').css('animation-play-state', 'paused')
-		}
+		},
+		showlyrics(song){
+			let {lyrics} = song
+			$(this.el).find('.song-name').text(`${song.name}`)
+			$(this.el).find('.song-autr').text(`${song.singer}`)
+
+			let  reg = /(\[\d+.\d+.\d+\])?(.*)/i   // 根据[]分解字符串
+			let lyric = lyrics.split('\\n')
+			
+			let $lyricdom = lyric.map( (string) => {
+				let result = reg.exec(string)
+
+				$p = $('<p></p>')
+				$p.text(result[2])
+				$p.addClass('lritem')
+				$p.attr('data-time', result[1])
+				return $p
+			})
+			$(this.el).find('.song-lyric').append($lyricdom)
+			
+		}  //对应showlyrics
 	
 	}
 
