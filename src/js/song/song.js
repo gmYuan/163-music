@@ -9,7 +9,8 @@
 			$(this.el).find('.inner-cover').attr('src', `${song.cover}`)
 			$(this.el).find('.audio').attr('src', `${song.url}`)
 
-			this.showlyrics(song)
+			$(this.el).find('.song-name').text(`${song.name}`)
+			$(this.el).find('.song-autr').text(`${song.singer}`)
 		},
 		play(){
 			$(this.el).find('.audio')[0].play()
@@ -25,16 +26,18 @@
 			$(this.el).find('.img-innerwrap').css('animation-play-state', 'paused')
 			$(this.el).find('.disc-light').css('animation-play-state', 'paused')
 		},
-		showlyrics(song){
-			let {lyrics} = song
-			$(this.el).find('.song-name').text(`${song.name}`)
-			$(this.el).find('.song-autr').text(`${song.singer}`)
+
+		showlyrics(data, seconds){
+			let {lyrics} = data
+			let nowtime = seconds
 
 			let  reg = /(\[\d+.\d+.\d+\])?(.*)/i   // 根据[]分解字符串
 			let lyric = lyrics.split('\\n')
 			
 			let $lyricdom = lyric.map( (string) => {
 				let result = reg.exec(string)
+				let datatime = result[1].split(':').match()
+				console.log(datatime)
 
 				$p = $('<p></p>')
 				$p.text(result[2])
@@ -91,6 +94,10 @@
 			$(this.view.el).find('.audio').on('ended', () => {
 				this.view.pause()
 				this.model.data.playStatus = false
+			})
+
+			$(this.view.el).find('.audio').on('timeupdate', (e) => {
+				this.view.showlyrics(this.model.data.song , e.currentTarget.currentTime)
 			})
 
 
