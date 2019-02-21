@@ -287,7 +287,6 @@ body{
   text-align: center;
   color: hsla(0,0%,100%,.6);
   overflow: hidden;
-  outline: 1px solid red;
 }
 .songlyric-inner .song-lyric {
   transition: transform .3s ease-out;
