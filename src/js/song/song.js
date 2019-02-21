@@ -11,7 +11,32 @@
 
 			$(this.el).find('.song-name').text(`${song.name}`)
 			$(this.el).find('.song-autr').text(`${song.singer}`)
+
+			let {lyrics} = song
+			let  reg = /\[(\d+.\d+.\d+)\]?(.*)/i   // 根据[]分解字符串
+			let lyric = lyrics.split('\\n')
+			// console.log(lyric)
+
+			let $lyricdom = lyric.map( (string) => {
+				let result = reg.exec(string)
+				let temp = result[1].split(':')
+				let datatime
+				if (temp) {
+					let minute = temp[0]
+					let second = temp[1]
+					datatime = (parseInt(minute,10)*60) + parseFloat(second)
+				}
+				
+				$p = $('<p></p>')
+				$p.text(result[2])
+				$p.addClass('lritem')
+				$p.attr('data-time', datatime)
+				return $p
+			})
+
+			$(this.el).find('.song-lyric').append($lyricdom)
 		},
+
 		play(){
 			$(this.el).find('.audio')[0].play()
 			$(this.el).find('.disc-play').addClass('none')
@@ -27,25 +52,31 @@
 			$(this.el).find('.disc-light').css('animation-play-state', 'paused')
 		},
 
-		showlyrics(data, seconds){
-			let {lyrics} = data
-			let nowtime = seconds
+		showlyrics(time){
+			let allP = $(this.el).find('.lritem')
+			let p 
+			for(let i =0;i<allP.length;i++){
+				if(i===allP.length-1){
+					p = allP[i]
+					break
+				}else{
+					let currentTime = allP.eq(i).attr('data-time')
+					let nextTime = allP.eq(i+1).attr('data-time')
+					if(currentTime <= time && time < nextTime){
+						p = allP[i]
+						break
+					}
+				}
+			}
 
-			let  reg = /(\[\d+.\d+.\d+\])?(.*)/i   // 根据[]分解字符串
-			let lyric = lyrics.split('\\n')
-			
-			let $lyricdom = lyric.map( (string) => {
-				let result = reg.exec(string)
-				let datatime = result[1].split(':').match()
-				console.log(datatime)
-
-				$p = $('<p></p>')
-				$p.text(result[2])
-				$p.addClass('lritem')
-				$p.attr('data-time', result[1])
-				return $p
+			let pHeight = p.getBoundingClientRect().top
+			let linesHeight = $(this.el).find('.song-lyric')[0].getBoundingClientRect().top
+			let height = pHeight - linesHeight
+			$(this.el).find('.song-lyric').css({
+				transform: `translateY(${- (height - 25)}px)`
 			})
-			$(this.el).find('.song-lyric').append($lyricdom)
+			$(p).addClass('active').siblings('.active').removeClass('active')
+			
 			
 		}  //对应showlyrics
 	
@@ -97,7 +128,7 @@
 			})
 
 			$(this.view.el).find('.audio').on('timeupdate', (e) => {
-				this.view.showlyrics(this.model.data.song , e.currentTarget.currentTime)
+				this.view.showlyrics(e.currentTarget.currentTime)
 			})
 
 
